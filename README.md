@@ -4,7 +4,7 @@ A simple audio gain plugin built with NIH-plug.
 
 ## Building
 
-To build the plugin, use:
+To build the plugin (VST3, CLAP), use:
 
 ```
 cargo xtask bundle first_gain_plugin --release
