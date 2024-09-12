@@ -1,6 +1,18 @@
+[workspace]
+members = ["xtask"]
+
 [package]
 name = "first_gain_plugin"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+crate-type = ["cdylib"]
+
 [dependencies]
+nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", features = ["assert_process_allocs", "standalone"] }
+nih_plug_egui = { git = "https://github.com/robbert-vdh/nih-plug.git" }
+
+[profile.release]
+lto = "thin"
+strip = "symbols"
