@@ -683,6 +683,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "dual_panning_plugin"
+version = "0.1.0"
+dependencies = [
+ "nih_plug",
+ "nih_plug_egui",
+]
+
+[[package]]
 name = "ecolor"
 version = "0.27.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -775,14 +783,6 @@ checksum = "534c5cf6194dfab3db3242765c03bbe257cf92f22b38f6bc0c58d59108a820ba"
 dependencies = [
  "libc",
  "windows-sys 0.52.0",
-]
-
-[[package]]
-name = "first_gain_plugin"
-version = "0.1.0"
-dependencies = [
- "nih_plug",
- "nih_plug_egui",
 ]
 
 [[package]]

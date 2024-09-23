@@ -7,7 +7,7 @@ A simple audio gain plugin built with NIH-plug.
 To build the plugin (VST3, CLAP), use:
 
 ```
-cargo xtask bundle first_gain_plugin --release
+cargo xtask bundle dual_panning_plugin --release
 ```
 
 ## Development

@@ -2,7 +2,7 @@
 members = ["xtask"]
 
 [package]
-name = "first_gain_plugin"
+name = "dual_panning_plugin"
 version = "0.1.0"
 edition = "2021"
 
