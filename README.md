@@ -1,14 +1,18 @@
 # First Gain Plugin
 
-A simple audio gain plugin built with NIH-plug.
+A simple audio gain plugin built with NIH-plug. Dual panning and gain per channel, logarithmic scaling for the gain sliders.
+
+Very rudimentary UI.
 
 ## Building
 
-To build the plugin (VST3, CLAP), use:
+To build the plugin (VST3, CLAP), install Rust and then use use:
 
 ```
 cargo xtask bundle dual_panning_plugin --release
 ```
+
+This should pull the NIH-plug repo.
 
 ## Development
 

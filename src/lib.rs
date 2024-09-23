@@ -38,9 +38,10 @@ impl Default for DualPanningParams {
             left_volume: FloatParam::new(
                 "Left Volume",
                 0.0,
-                FloatRange::Linear {
-                    min: -12.0,
-                    max: 12.0,
+                FloatRange::Skewed {
+                    min: -100.0,
+                    max: 20.0,
+                    factor: FloatRange::gain_skew_factor(-100.0, 20.0),
                 },
             )
                 .with_unit(" dB")
@@ -49,9 +50,10 @@ impl Default for DualPanningParams {
             right_volume: FloatParam::new(
                 "Right Volume",
                 0.0,
-                FloatRange::Linear {
-                    min: -12.0,
-                    max: 12.0,
+                FloatRange::Skewed {
+                    min: -100.0,
+                    max: 20.0,
+                    factor: FloatRange::gain_skew_factor(-100.0, 20.0),
                 },
             )
                 .with_unit(" dB")
@@ -114,7 +116,7 @@ impl Plugin for DualPanningPlugin {
             |_, _| (), // Default state initialization callback
             move |egui_ctx, setter, state| {
                 egui::CentralPanel::default().show(egui_ctx, |ui| {
-                    ui.heading("Dual Panning Plugin");
+                    ui.heading("haslo's Dual Panning Plugin");
                     ui.add_space(10.0);
 
                     ui.horizontal(|ui| {
@@ -130,7 +132,7 @@ impl Plugin for DualPanningPlugin {
                             ui.add_space(10.0);
                             ui.label("Left Gain");
                             let mut left_volume = state.left_volume.value();
-                            if ui.add(egui::Slider::new(&mut left_volume, -12.0..=12.0).vertical().text("L")).changed() {
+                            if ui.add(egui::Slider::new(&mut left_volume, -100.0..=20.0).vertical().text("L")).changed() {
                                 setter.begin_set_parameter(&state.left_volume);
                                 setter.set_parameter(&state.left_volume, left_volume);
                                 setter.end_set_parameter(&state.left_volume);
@@ -151,7 +153,7 @@ impl Plugin for DualPanningPlugin {
                             ui.add_space(10.0);
                             ui.label("Right Gain");
                             let mut right_volume = state.right_volume.value();
-                            if ui.add(egui::Slider::new(&mut right_volume, -12.0..=12.0).vertical().text("R")).changed() {
+                            if ui.add(egui::Slider::new(&mut right_volume, -100.0..=20.0).vertical().text("R")).changed() {
                                 setter.begin_set_parameter(&state.right_volume);
                                 setter.set_parameter(&state.right_volume, right_volume);
                                 setter.end_set_parameter(&state.right_volume);
