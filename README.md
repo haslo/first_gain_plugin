@@ -12,7 +12,7 @@ To build the plugin (VST3, CLAP), install Rust and then use use:
 cargo xtask bundle dual_panning_plugin --release
 ```
 
-This should pull the NIH-plug repo.
+This should pull the NIH-plug repo. After the build, the VST3 and CLAP build will be in target/bundled, ready to be moved to your plugin folders.
 
 ## Development
 
