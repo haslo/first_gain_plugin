@@ -4,6 +4,8 @@ A simple audio gain plugin built with NIH-plug. Dual panning and gain per channe
 
 Very rudimentary UI.
 
+![Dual Pan Interface](dual_pan.png)
+
 ## Building
 
 To build the plugin (VST3, CLAP), install Rust and then use use:
